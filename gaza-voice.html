@@ -2,24 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Pulse of Humanity Amidst the Rubble - Gaza's Voice to the World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- ===== SEO META TAGS ===== -->
+    <title>Gaza Voice | The Pulse of Humanity Amidst the Rubble</title>
+    <meta name="description" content="Gaza Voice is an independent humanitarian organization founded by Saif Aburok, dedicated to providing emergency relief and documenting the truth from Gaza. Donate now to help families in need.">
+    <meta name="keywords" content="Saif Aburok, Gaza Relief, Gaza Voice, humanitarian aid, donate Gaza, Palestine, emergency relief, Gaza crisis">
+    <meta name="author" content="Saif Aburok">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="3 days">
+    <meta name="rating" content="general">
+
+    <!-- ===== OPEN GRAPH (Facebook / WhatsApp Preview) ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gazavoice.org/">
+    <meta property="og:title" content="Gaza Voice | The Pulse of Humanity Amidst the Rubble">
+    <meta property="og:description" content="An independent humanitarian organization by Saif Aburok — Born from the heart of Gaza to connect hope with grieving families. Donate securely via PayPal.">
+    <meta property="og:image" content="https://www.unicef.org/sites/default/files/styles/hero_extended/public/UN0464417.jpg.webp?itok=S-gNZQW_">
+    <meta property="og:site_name" content="Gaza Voice">
+    <meta property="og:locale" content="en_US">
+
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gaza Voice | Help Save Lives in Gaza">
+    <meta name="twitter:description" content="Founded by Saif Aburok — Providing emergency relief and documenting truth from Gaza. Every dollar makes a difference.">
+    <meta name="twitter:image" content="https://www.unicef.org/sites/default/files/styles/hero_extended/public/UN0464417.jpg.webp?itok=S-gNZQW_">
+
+    <!-- ===== SCHEMA.ORG STRUCTURED DATA ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "Gaza Voice",
+      "alternateName": "Gaza Relief Foundation",
+      "description": "An independent humanitarian organization founded by Saif Aburok, providing emergency relief and documenting the truth from Gaza.",
+      "founder": {
+        "@type": "Person",
+        "name": "Saif Aburok"
+      },
+      "url": "https://gazavoice.org",
+      "email": "seifrouk79@gmail.com",
+      "telephone": "+972598337311",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PS",
+        "addressRegion": "Gaza Strip"
+      },
+      "sameAs": [],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Donations",
+        "email": "seifrouk79@gmail.com"
+      }
+    }
+    </script>
+
+    <link rel="canonical" href="https://gazavoice.org/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* ===== RESET ===== */
+        *, *::before, *::after {
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
         :root {
             --dark-bg: #0d0d0d;
             --gray-dark: #1a1a1a;
             --gray-medium: #2a2a2a;
-            --gray-light: #888888;
-            --white: #ffffff;
+            --gray-light: #888;
+            --white: #fff;
             --red-dark: #8b0000;
             --red-medium: #a52a2a;
+            --gold: #c9a84c;
+
+            /* fluid spacing */
+            --sp-xs: clamp(8px,  2vw, 12px);
+            --sp-sm: clamp(12px, 3vw, 20px);
+            --sp-md: clamp(20px, 4vw, 32px);
+            --sp-lg: clamp(40px, 6vw, 70px);
+            --sp-xl: clamp(60px, 8vw, 100px);
+
+            /* fluid type */
+            --fs-xs:  clamp(0.72rem, 2vw, 0.82rem);
+            --fs-sm:  clamp(0.85rem, 2.5vw, 0.95rem);
+            --fs-md:  clamp(0.95rem, 3vw, 1.05rem);
+            --fs-lg:  clamp(1.1rem,  3.5vw, 1.3rem);
+            --fs-xl:  clamp(1.5rem,  4vw, 2.2rem);
+            --fs-2xl: clamp(2rem,    5vw, 3rem);
+            --fs-3xl: clamp(2.2rem,  6vw, 3.5rem);
         }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -27,13 +106,21 @@
             color: var(--white);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a { text-decoration: none; color: inherit; }
 
         /* ===== ANIMATED BACKGROUND ===== */
         .animated-background {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            inset: 0;
             z-index: -1;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
             overflow: hidden;
@@ -47,10 +134,10 @@
         }
 
         @keyframes float {
-            0%   { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
+            0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
             10%  { opacity: 0.3; }
             90%  { opacity: 0.1; }
-            100% { transform: translateY(-100vh) translateX(50px) rotate(360deg); opacity: 0; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
 
         .wave {
@@ -59,164 +146,153 @@
             background: radial-gradient(circle, rgba(139,0,0,0.05) 0%, transparent 70%);
             animation: wave 20s ease-in-out infinite;
         }
-        .wave:nth-child(2) { animation-delay: -5s; animation-duration: 25s; }
-        .wave:nth-child(3) { animation-delay: -10s; animation-duration: 30s; }
+        .wave:nth-child(2) { animation-delay:-5s; animation-duration:25s; }
+        .wave:nth-child(3) { animation-delay:-10s; animation-duration:30s; }
 
         @keyframes wave {
-            0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 0.3; }
-            50%      { transform: translate(-30%,-60%) scale(1.2); opacity: 0.5; }
+            0%,100% { transform:translate(-50%,-50%) scale(1); opacity:.3; }
+            50%      { transform:translate(-30%,-60%) scale(1.2); opacity:.5; }
         }
 
         .gradient-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(45deg, transparent 0%, rgba(139,0,0,0.1) 25%, transparent 50%, rgba(42,42,42,0.2) 75%, transparent 100%);
+            position: absolute; inset: 0;
+            background: linear-gradient(45deg,transparent 0%,rgba(139,0,0,.08) 25%,transparent 50%,rgba(42,42,42,.15) 75%,transparent 100%);
             background-size: 400% 400%;
             animation: gradientMove 15s ease infinite;
         }
 
         @keyframes gradientMove {
-            0%   { background-position: 0% 50%; }
-            50%  { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0%  { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100%{ background-position: 0% 50%; }
         }
 
-        /* ===== FLYING DOVES ===== */
+        /* ===== STARS ===== */
+        .stars-container {
+            position: fixed; inset: 0;
+            pointer-events: none; z-index: 0; overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: rgba(255,255,255,.6);
+            border-radius: 50%;
+            animation: twinkle ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%,100% { opacity:0; transform:scale(.5); }
+            50%      { opacity:1; transform:scale(1.5); }
+        }
+
+        /* ===== DOVES ===== */
         .doves-container {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
+            position: fixed; inset: 0;
+            pointer-events: none; z-index: 0; overflow: hidden;
         }
 
         .dove {
             position: absolute;
-            font-size: 1.8rem;
             animation: flyDove linear infinite;
-            opacity: 0.15;
-            filter: grayscale(0.5);
+            opacity: .1;
         }
 
-        .dove:nth-child(1)  { top: 8%;  animation-duration: 22s; animation-delay: 0s;    font-size: 1.5rem; }
-        .dove:nth-child(2)  { top: 18%; animation-duration: 28s; animation-delay: -4s;   font-size: 2rem; }
-        .dove:nth-child(3)  { top: 32%; animation-duration: 19s; animation-delay: -8s;   font-size: 1.3rem; }
-        .dove:nth-child(4)  { top: 48%; animation-duration: 25s; animation-delay: -12s;  font-size: 2.2rem; }
-        .dove:nth-child(5)  { top: 62%; animation-duration: 30s; animation-delay: -6s;   font-size: 1.6rem; }
-        .dove:nth-child(6)  { top: 75%; animation-duration: 21s; animation-delay: -15s;  font-size: 1.4rem; }
-        .dove:nth-child(7)  { top: 88%; animation-duration: 26s; animation-delay: -10s;  font-size: 1.8rem; }
-        .dove:nth-child(8)  { top: 14%; animation-duration: 32s; animation-delay: -18s;  font-size: 1.2rem; }
-        .dove:nth-child(9)  { top: 55%; animation-duration: 24s; animation-delay: -3s;   font-size: 2.4rem; }
-        .dove:nth-child(10) { top: 40%; animation-duration: 20s; animation-delay: -20s;  font-size: 1.1rem; }
+        .dove:nth-child(1)  { top:8%;  font-size:clamp(1rem,2vw,1.5rem); animation-duration:22s; animation-delay:0s; }
+        .dove:nth-child(2)  { top:18%; font-size:clamp(1.2rem,2.5vw,2rem); animation-duration:28s; animation-delay:-4s; }
+        .dove:nth-child(3)  { top:32%; font-size:clamp(.9rem,1.8vw,1.3rem); animation-duration:19s; animation-delay:-8s; }
+        .dove:nth-child(4)  { top:48%; font-size:clamp(1.3rem,2.8vw,2.2rem); animation-duration:25s; animation-delay:-12s; }
+        .dove:nth-child(5)  { top:62%; font-size:clamp(1rem,2.2vw,1.6rem); animation-duration:30s; animation-delay:-6s; }
+        .dove:nth-child(6)  { top:75%; font-size:clamp(.9rem,2vw,1.4rem); animation-duration:21s; animation-delay:-15s; }
+        .dove:nth-child(7)  { top:88%; font-size:clamp(1.1rem,2.4vw,1.8rem); animation-duration:26s; animation-delay:-10s; }
+        .dove:nth-child(8)  { top:14%; font-size:clamp(.8rem,1.6vw,1.2rem); animation-duration:32s; animation-delay:-18s; }
+        .dove:nth-child(9)  { top:55%; font-size:clamp(1.4rem,3vw,2.4rem); animation-duration:24s; animation-delay:-3s; }
+        .dove:nth-child(10) { top:40%; font-size:clamp(.7rem,1.5vw,1.1rem); animation-duration:20s; animation-delay:-20s; }
 
         @keyframes flyDove {
-            0%   { left: -8%; transform: scaleX(1) translateY(0px); opacity: 0; }
-            5%   { opacity: 0.15; }
-            45%  { transform: scaleX(1) translateY(-25px); }
-            55%  { transform: scaleX(1) translateY(-10px); }
-            75%  { transform: scaleX(1) translateY(-30px); }
-            95%  { opacity: 0.15; }
-            100% { left: 108%; transform: scaleX(1) translateY(0px); opacity: 0; }
+            0%   { left:-8%; opacity:0; transform:translateY(0); }
+            5%   { opacity:.1; }
+            45%  { transform:translateY(-20px); }
+            75%  { transform:translateY(-25px); }
+            95%  { opacity:.1; }
+            100% { left:108%; opacity:0; transform:translateY(0); }
         }
 
+        /* ===== SIDE DECOR ===== */
         .side-decoration {
-            position: fixed;
-            top: 0;
-            width: 60px; height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly;
-            opacity: 0.06;
+            position: fixed; top:0; width:50px; height:100%;
+            pointer-events:none; z-index:0;
+            display:flex; flex-direction:column;
+            align-items:center; justify-content:space-evenly;
+            opacity:.05;
         }
-
-        .side-decoration.left  { left: 0; }
-        .side-decoration.right { right: 0; }
-
-        .side-decoration span {
-            font-size: 2rem;
-            animation: sideFloat 4s ease-in-out infinite;
-        }
-
-        .side-decoration span:nth-child(even) { animation-delay: -2s; }
-        .side-decoration span:nth-child(3n)   { animation-delay: -1s; }
+        .side-decoration.left  { left:0; }
+        .side-decoration.right { right:0; }
+        .side-decoration span  { font-size:clamp(1.2rem,2vw,2rem); animation:sideFloat 4s ease-in-out infinite; }
+        .side-decoration span:nth-child(even) { animation-delay:-2s; }
+        .side-decoration span:nth-child(3n)   { animation-delay:-1s; }
 
         @keyframes sideFloat {
-            0%,100% { transform: translateY(0) rotate(-10deg); }
-            50%      { transform: translateY(-12px) rotate(10deg); }
+            0%,100% { transform:translateY(0) rotate(-10deg); }
+            50%      { transform:translateY(-10px) rotate(10deg); }
         }
 
-        /* ===== TOAST NOTIFICATIONS ===== */
+        /* ===== TOAST ===== */
         .toast-container {
             position: fixed;
-            bottom: 30px; left: 25px;
+            bottom: clamp(15px,3vw,30px);
+            left:  clamp(10px,3vw,25px);
             z-index: 9990;
-            display: flex;
-            flex-direction: column-reverse;
-            gap: 12px;
-            max-width: 310px;
+            display: flex; flex-direction: column-reverse;
+            gap: 10px;
+            max-width: clamp(240px,80vw,300px);
         }
 
         .toast {
-            background: rgba(22,22,22,0.98);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(18,18,18,.98);
+            border: 1px solid rgba(255,255,255,.08);
             border-left: 4px solid #27ae60;
             border-radius: 12px;
-            padding: 14px 16px;
-            display: flex;
-            align-items: center;
-            gap: 13px;
+            padding: clamp(10px,2.5vw,14px) clamp(12px,3vw,16px);
+            display: flex; align-items: center; gap: 10px;
             backdrop-filter: blur(20px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.7);
-            transform: translateX(-120%);
-            opacity: 0;
-            transition: all 0.5s cubic-bezier(0.34,1.56,0.64,1);
+            box-shadow: 0 6px 25px rgba(0,0,0,.7);
+            transform: translateX(-120%); opacity: 0;
+            transition: all .5s cubic-bezier(.34,1.56,.64,1);
         }
 
-        .toast.show  { transform: translateX(0); opacity: 1; }
-        .toast.hide  { transform: translateX(-120%); opacity: 0; }
+        .toast.show { transform:translateX(0); opacity:1; }
+        .toast.hide { transform:translateX(-120%); opacity:0; }
 
         .toast-avatar {
-            width: 40px; height: 40px;
-            background: linear-gradient(135deg, var(--red-dark), #c0392b);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1rem; flex-shrink: 0;
-            font-weight: 800; color: white;
+            width: clamp(32px,8vw,40px);
+            height: clamp(32px,8vw,40px);
+            background: linear-gradient(135deg,var(--red-dark),#c0392b);
+            border-radius: 50%; display:flex; align-items:center; justify-content:center;
+            font-size: clamp(.85rem,2vw,1rem); flex-shrink:0; font-weight:800; color:white;
         }
 
-        .toast-info { flex: 1; min-width: 0; }
-
-        .toast-name {
-            font-size: 0.88rem; font-weight: 700;
-            color: var(--white); margin-bottom: 3px;
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-        }
-
-        .toast-amount { font-size: 1.05rem; font-weight: 800; color: #4caf50; }
-        .toast-label  { font-size: 0.72rem; color: var(--gray-light); margin-top: 2px; }
-        .toast-icon   { font-size: 1.4rem; flex-shrink: 0; }
+        .toast-info    { flex:1; min-width:0; }
+        .toast-name    { font-size:var(--fs-xs); font-weight:700; color:var(--white); margin-bottom:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+        .toast-amount  { font-size:var(--fs-sm); font-weight:800; color:#4caf50; }
+        .toast-label   { font-size:clamp(.65rem,1.8vw,.72rem); color:var(--gray-light); margin-top:2px; }
+        .toast-icon    { font-size:clamp(1.1rem,2.5vw,1.4rem); flex-shrink:0; }
 
         /* ===== CONTAINER ===== */
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 30px;
-            position: relative;
-            z-index: 1;
+            padding: 0 clamp(15px,4vw,30px);
+            position: relative; z-index: 1;
         }
 
         /* ===== HEADER ===== */
         header {
-            padding: 25px 0;
-            background: rgba(13,13,13,0.95);
+            padding: clamp(15px,3vw,25px) 0;
+            background: rgba(13,13,13,.96);
             backdrop-filter: blur(15px);
-            position: sticky; top: 0; z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            position: sticky; top:0; z-index:1000;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+            box-shadow: 0 4px 30px rgba(0,0,0,.5);
         }
 
         .header-content {
@@ -224,563 +300,652 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
         }
 
         .logo {
-            font-size: 1.3rem; font-weight: 800;
-            color: var(--white); letter-spacing: 1.5px;
-            display: flex; align-items: center; gap: 10px;
+            font-size: clamp(1rem,3vw,1.3rem);
+            font-weight: 800; color:var(--white); letter-spacing:1.5px;
+            display:flex; align-items:center; gap:10px;
         }
 
         .logo-icon {
-            width: 35px; height: 35px;
-            background: linear-gradient(135deg, var(--red-dark), var(--red-medium));
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem;
+            width: clamp(28px,5vw,35px);
+            height: clamp(28px,5vw,35px);
+            background: linear-gradient(135deg,var(--red-dark),var(--red-medium));
+            border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            font-size:clamp(.9rem,2vw,1.2rem);
+            box-shadow: 0 0 15px rgba(139,0,0,.4);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
         }
 
         nav a {
-            color: var(--gray-light); text-decoration: none;
-            margin-left: 28px; font-size: 0.88rem; font-weight: 500;
-            transition: all 0.5s; position: relative;
+            color:var(--gray-light); text-decoration:none;
+            margin-left:clamp(12px,2.5vw,28px);
+            font-size:clamp(.78rem,2vw,.88rem); font-weight:500;
+            transition:all .3s; position:relative;
         }
 
         nav a::after {
-            content: ''; position: absolute;
-            bottom: -5px; left: 0; width: 0; height: 2px;
-            background: var(--red-medium); transition: width 0.3s;
+            content:''; position:absolute;
+            bottom:-5px; left:0; width:0; height:2px;
+            background:var(--red-medium); transition:width .3s;
         }
 
-        nav a:hover { color: var(--white); }
-        nav a:hover::after { width: 100%; }
+        nav a:hover { color:var(--white); }
+        nav a:hover::after { width:100%; }
 
         .donate-nav-btn {
-            background: var(--red-dark) !important;
-            color: var(--white) !important;
-            padding: 10px 22px; border-radius: 25px;
+            background:var(--red-dark) !important;
+            color:var(--white) !important;
+            padding:clamp(7px,1.5vw,10px) clamp(14px,3vw,22px);
+            border-radius:25px;
+            font-size:clamp(.78rem,2vw,.88rem) !important;
         }
-
-        .donate-nav-btn:hover { background: var(--red-medium) !important; transform: translateY(-2px); }
-        .donate-nav-btn::after { display: none !important; }
+        .donate-nav-btn:hover { background:var(--red-medium)!important; transform:translateY(-2px); }
+        .donate-nav-btn::after { display:none!important; }
 
         .mobile-menu-toggle {
-            display: none; background: none; border: none;
-            color: var(--white); font-size: 1.8rem; cursor: pointer;
+            display:none; background:none; border:none;
+            color:var(--white); font-size:1.6rem; cursor:pointer;
+            padding: 5px;
+        }
+
+        /* Mobile nav */
+        @media (max-width:640px) {
+            .mobile-menu-toggle { display:block; }
+            nav {
+                display:none; flex-direction:column;
+                width:100%; gap:0; margin-top:15px;
+            }
+            nav.open { display:flex; }
+            nav a {
+                margin-left:0;
+                padding:12px 0;
+                border-bottom:1px solid rgba(255,255,255,.06);
+                width:100%;
+            }
+            .donate-nav-btn {
+                margin-top:10px;
+                text-align:center;
+                width:100%;
+            }
         }
 
         /* ===== URGENT BANNER ===== */
         .urgent-banner {
-            background: linear-gradient(90deg, var(--red-dark), var(--red-medium), var(--red-dark));
-            background-size: 200% 100%;
-            animation: urgentPulse 3s ease-in-out infinite;
-            padding: 18px; text-align: center;
-            font-weight: 700; font-size: 1rem; letter-spacing: 1px;
+            background: linear-gradient(90deg,var(--red-dark),var(--red-medium),var(--red-dark));
+            background-size:200% 100%;
+            animation:urgentPulse 3s ease-in-out infinite;
+            padding:clamp(10px,2vw,18px);
+            text-align:center; font-weight:700;
+            font-size:clamp(.82rem,2.5vw,1rem); letter-spacing:.5px;
         }
 
         @keyframes urgentPulse {
-            0%,100% { background-position: 0% 50%; }
-            50%      { background-position: 100% 50%; }
+            0%,100% { background-position:0% 50%; }
+            50%      { background-position:100% 50%; }
         }
 
         /* ===== HERO ===== */
         .hero {
-            min-height: 90vh;
-            display: flex; align-items: center; justify-content: center;
-            text-align: center; padding: 100px 30px 80px;
-            position: relative;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.88)),
-                        url('https://www.unicef.org/sites/default/files/styles/hero_extended/public/UN0464417.jpg.webp?itok=S-gNZQW_');
-            background-size: cover; background-position: center; background-attachment: fixed;
+            min-height:clamp(75vh,90vh,95vh);
+            display:flex; align-items:center; justify-content:center;
+            text-align:center;
+            padding:clamp(60px,10vw,100px) clamp(15px,4vw,30px) clamp(50px,8vw,80px);
+            position:relative;
+            background:
+                linear-gradient(to bottom,rgba(0,0,0,.65),rgba(0,0,0,.88)),
+                url('https://www.unicef.org/sites/default/files/styles/hero_extended/public/UN0464417.jpg.webp?itok=S-gNZQW_');
+            background-size:cover; background-position:center;
         }
 
         .hero::before {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.5) 100%);
+            content:''; position:absolute; inset:0;
+            background:radial-gradient(circle at center,transparent 0%,rgba(0,0,0,.5) 100%);
         }
 
-        .hero-content { position: relative; z-index: 2; }
+        .hero-content { position:relative; z-index:2; max-width:900px; margin:0 auto; }
 
         .hero-badge {
-            display: inline-block;
-            background: rgba(139,0,0,0.3); border: 1px solid rgba(139,0,0,0.5);
-            color: var(--white); padding: 10px 25px; border-radius: 20px;
-            font-size: 0.85rem; font-weight: 600; margin-bottom: 25px;
-            text-transform: uppercase; letter-spacing: 1px; backdrop-filter: blur(10px);
+            display:inline-block;
+            background:rgba(139,0,0,.3); border:1px solid rgba(139,0,0,.5);
+            color:var(--white); padding:clamp(7px,1.5vw,10px) clamp(15px,3vw,25px);
+            border-radius:20px; font-size:var(--fs-xs); font-weight:600;
+            margin-bottom:clamp(15px,3vw,25px);
+            text-transform:uppercase; letter-spacing:1px; backdrop-filter:blur(10px);
         }
 
         .hero-content h1 {
-            font-size: 3.5rem; font-weight: 800;
-            margin-bottom: 25px; color: var(--white);
-            line-height: 1.2; text-shadow: 2px 2px 20px rgba(0,0,0,0.9);
+            font-size:var(--fs-3xl);
+            font-weight:800; margin-bottom:clamp(15px,3vw,25px);
+            color:var(--white); line-height:1.15;
+            text-shadow:2px 2px 20px rgba(0,0,0,.9);
         }
 
         .hero-subtitle {
-            font-size: 1.3rem; color: rgba(255,255,255,0.9);
-            margin-bottom: 50px; font-weight: 400;
-            max-width: 800px; margin-left: auto; margin-right: auto;
-            line-height: 1.8; text-shadow: 1px 1px 10px rgba(0,0,0,0.8);
+            font-size:var(--fs-lg);
+            color:rgba(255,255,255,.88);
+            margin-bottom:clamp(30px,5vw,50px);
+            font-weight:400; max-width:750px;
+            margin-left:auto; margin-right:auto;
+            line-height:1.8; text-shadow:1px 1px 10px rgba(0,0,0,.8);
         }
 
         .hero-stats {
-            display: flex; justify-content: center;
-            gap: 50px; margin: 60px 0; flex-wrap: wrap;
+            display:flex; justify-content:center;
+            gap:clamp(15px,3vw,50px); margin:clamp(30px,5vw,60px) 0; flex-wrap:wrap;
         }
 
         .stat-item {
-            text-align: center; padding: 20px 25px;
-            background: rgba(13,13,13,0.7);
-            border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(15px); min-width: 150px; transition: all 0.3s;
+            text-align:center;
+            padding:clamp(12px,2.5vw,20px) clamp(15px,3vw,25px);
+            background:rgba(13,13,13,.7);
+            border-radius:12px; border:1px solid rgba(255,255,255,.1);
+            backdrop-filter:blur(15px);
+            min-width:clamp(100px,20vw,150px);
+            transition:all .3s;
         }
 
-        .stat-item:hover {
-            transform: translateY(-5px);
-            border-color: rgba(139,0,0,0.4);
-            box-shadow: 0 10px 30px rgba(139,0,0,0.3);
-        }
+        .stat-item:hover { transform:translateY(-5px); border-color:rgba(139,0,0,.4); box-shadow:0 10px 30px rgba(139,0,0,.3); }
 
-        .stat-number {
-            font-size: 3rem; font-weight: 800;
-            color: var(--red-medium); display: block; margin-bottom: 8px;
-        }
+        .stat-number { font-size:var(--fs-2xl); font-weight:800; color:var(--red-medium); display:block; margin-bottom:5px; }
+        .stat-label  { font-size:var(--fs-xs); color:rgba(255,255,255,.8); text-transform:uppercase; letter-spacing:1px; }
 
-        .stat-label {
-            font-size: 0.85rem; color: rgba(255,255,255,0.8);
-            text-transform: uppercase; letter-spacing: 1.5px;
-        }
-
-        .cta-buttons {
-            display: flex; gap: 20px;
-            justify-content: center; margin-top: 40px; flex-wrap: wrap;
-        }
+        .cta-buttons { display:flex; gap:clamp(10px,2vw,20px); justify-content:center; margin-top:clamp(25px,4vw,40px); flex-wrap:wrap; }
 
         .cta-button {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: var(--red-dark); color: var(--white);
-            padding: 20px 45px; border: 2px solid var(--red-dark); border-radius: 50px;
-            font-size: 1.1rem; font-weight: 700;
-            cursor: pointer; transition: all 0.3s;
-            text-decoration: none; position: relative; overflow: hidden;
+            display:inline-flex; align-items:center; gap:8px;
+            background:var(--red-dark); color:var(--white);
+            padding:clamp(14px,3vw,20px) clamp(25px,5vw,45px);
+            border:2px solid var(--red-dark); border-radius:50px;
+            font-size:clamp(.95rem,2.5vw,1.1rem); font-weight:700;
+            cursor:pointer; transition:all .3s;
+            text-decoration:none; position:relative; overflow:hidden;
         }
 
         .cta-button::before {
-            content: ''; position: absolute; top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
+            content:''; position:absolute; top:0; left:-100%;
+            width:100%; height:100%;
+            background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);
+            transition:left .5s;
         }
 
-        .cta-button:hover::before { left: 100%; }
-        .cta-button:hover { background: var(--red-medium); transform: translateY(-3px); box-shadow: 0 15px 40px rgba(139,0,0,0.5); }
+        .cta-button:hover::before { left:100%; }
+        .cta-button:hover { background:var(--red-medium); transform:translateY(-3px); box-shadow:0 15px 40px rgba(139,0,0,.5); }
 
-        .cta-button.secondary {
-            background: transparent; border-color: rgba(255,255,255,0.4); backdrop-filter: blur(10px);
-        }
-        .cta-button.secondary:hover { background: rgba(255,255,255,0.15); border-color: var(--white); }
+        .cta-button.secondary { background:transparent; border-color:rgba(255,255,255,.4); backdrop-filter:blur(10px); }
+        .cta-button.secondary:hover { background:rgba(255,255,255,.15); border-color:var(--white); }
 
-        /* ===== SECTIONS ===== */
+        /* ===== SECTION SHARED ===== */
         .section-title {
-            font-size: 2.8rem; text-align: center;
-            margin-bottom: 20px; color: var(--white);
-            font-weight: 800; text-transform: uppercase; letter-spacing: 2px;
+            font-size:var(--fs-2xl);
+            text-align:center; margin-bottom:clamp(12px,2vw,20px);
+            color:var(--white); font-weight:800;
+            text-transform:uppercase; letter-spacing:2px;
         }
 
         .section-subtitle {
-            text-align: center; color: var(--gray-light);
-            font-size: 1.1rem; margin-bottom: 60px;
-            max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8;
+            text-align:center; color:var(--gray-light);
+            font-size:var(--fs-md); margin-bottom:clamp(30px,5vw,60px);
+            max-width:700px; margin-left:auto; margin-right:auto; line-height:1.8;
         }
 
         /* ===== WHO WE ARE ===== */
-        .who-we-are { padding: 100px 30px; background: rgba(26,26,26,0.3); backdrop-filter: blur(10px); }
+        .who-we-are { padding:var(--sp-xl) 0; background:rgba(26,26,26,.3); backdrop-filter:blur(10px); }
 
         .content-block {
-            background: rgba(42,42,42,0.5); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px; padding: 50px; margin-bottom: 40px;
-            backdrop-filter: blur(15px); position: relative; overflow: hidden;
+            background:rgba(42,42,42,.5); border:1px solid rgba(255,255,255,.08);
+            border-radius:16px; padding:clamp(25px,5vw,50px);
+            margin-bottom:clamp(20px,4vw,40px);
+            backdrop-filter:blur(15px); position:relative; overflow:hidden;
         }
 
         .content-block::before {
-            content: ''; position: absolute; top: 0; left: 0;
-            width: 5px; height: 100%;
-            background: linear-gradient(to bottom, var(--red-dark), var(--red-medium));
+            content:''; position:absolute; top:0; left:0;
+            width:5px; height:100%;
+            background:linear-gradient(to bottom,var(--red-dark),var(--red-medium));
         }
 
-        .content-block h3 { font-size: 2rem; margin-bottom: 25px; color: var(--white); font-weight: 700; }
-        .content-block p  { color: var(--gray-light); line-height: 2; font-size: 1.05rem; margin-bottom: 20px; }
+        .content-block h3 { font-size:var(--fs-xl); margin-bottom:clamp(15px,3vw,25px); color:var(--white); font-weight:700; }
+        .content-block p  { color:var(--gray-light); line-height:2; font-size:var(--fs-md); margin-bottom:clamp(12px,2vw,20px); }
 
         /* ===== VISION & MISSION ===== */
-        .vision-mission { padding: 100px 30px; }
+        .vision-mission { padding:var(--sp-xl) 0; }
 
         .vm-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(420px,1fr));
-            gap: 40px; margin-top: 50px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));
+            gap:clamp(20px,4vw,40px); margin-top:clamp(25px,4vw,50px);
         }
 
         .vm-card {
-            background: rgba(26,26,26,0.7); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px; padding: 50px 40px;
-            backdrop-filter: blur(15px); transition: all 0.4s;
+            background:rgba(26,26,26,.7); border:1px solid rgba(255,255,255,.08);
+            border-radius:16px; padding:clamp(25px,5vw,50px) clamp(20px,4vw,40px);
+            backdrop-filter:blur(15px); transition:all .4s;
         }
 
-        .vm-card:hover { transform: translateY(-10px); border-color: rgba(139,0,0,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .vm-icon { font-size: 4rem; margin-bottom: 25px; display: inline-block; }
-        .vm-card h3 { font-size: 2rem; margin-bottom: 25px; color: var(--white); font-weight: 700; }
-        .vm-card p  { color: var(--gray-light); line-height: 2; font-size: 1.05rem; margin-bottom: 15px; }
+        .vm-card:hover { transform:translateY(-8px); border-color:rgba(139,0,0,.3); box-shadow:0 20px 50px rgba(0,0,0,.5); }
+
+        .vm-icon { font-size:clamp(2.5rem,5vw,4rem); margin-bottom:clamp(15px,3vw,25px); display:inline-block; }
+        .vm-card h3 { font-size:var(--fs-xl); margin-bottom:clamp(15px,3vw,25px); color:var(--white); font-weight:700; }
+        .vm-card p  { color:var(--gray-light); line-height:2; font-size:var(--fs-md); margin-bottom:12px; }
 
         /* ===== IMAGE SECTIONS ===== */
-        .image-section { padding: 80px 30px; }
-        .image-section.dark { background: rgba(0,0,0,0.4); }
+        .image-section { padding:clamp(40px,6vw,80px) 0; }
+        .image-section.dark { background:rgba(0,0,0,.4); }
 
         .image-wrapper {
-            border-radius: 20px; overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-            border: 1px solid rgba(255,255,255,0.1);
-            max-width: 1000px; margin: 0 auto;
+            border-radius:clamp(12px,2vw,20px); overflow:hidden;
+            box-shadow:0 20px 60px rgba(0,0,0,.7);
+            border:1px solid rgba(255,255,255,.1);
+            max-width:1000px; margin:0 auto;
         }
 
         .image-wrapper img {
-            width: 100%; height: 520px; object-fit: cover;
-            display: block; transition: transform 0.6s ease;
+            width:100%;
+            height:clamp(200px,35vw,520px);
+            object-fit:cover; display:block; transition:transform .6s ease;
         }
 
-        .image-wrapper:hover img { transform: scale(1.03); }
+        .image-wrapper:hover img { transform:scale(1.03); }
 
         .image-caption {
-            background: rgba(13,13,13,0.97); padding: 35px 40px;
-            text-align: center; border-top: 3px solid var(--red-dark);
+            background:rgba(13,13,13,.97);
+            padding:clamp(20px,4vw,35px) clamp(20px,4vw,40px);
+            text-align:center; border-top:3px solid var(--red-dark);
         }
 
-        .image-caption h3 { font-size: 1.7rem; color: var(--white); margin-bottom: 15px; font-weight: 700; }
-        .image-caption p  { color: var(--gray-light); font-size: 1rem; line-height: 1.8; }
+        .image-caption h3 { font-size:var(--fs-lg); color:var(--white); margin-bottom:12px; font-weight:700; }
+        .image-caption p  { color:var(--gray-light); font-size:var(--fs-sm); line-height:1.8; }
 
         /* ===== WHY US ===== */
-        .why-us { padding: 100px 30px; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); }
+        .why-us { padding:var(--sp-xl) 0; background:rgba(0,0,0,.5); backdrop-filter:blur(10px); }
 
         .why-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-            gap: 35px; margin-top: 60px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));
+            gap:clamp(15px,3vw,35px); margin-top:clamp(25px,4vw,60px);
         }
 
         .why-card {
-            background: rgba(42,42,42,0.5); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px; padding: 45px 35px;
-            text-align: center; backdrop-filter: blur(10px);
-            transition: all 0.4s; position: relative; overflow: hidden;
+            background:rgba(42,42,42,.5); border:1px solid rgba(255,255,255,.08);
+            border-radius:16px; padding:clamp(25px,5vw,45px) clamp(20px,4vw,35px);
+            text-align:center; backdrop-filter:blur(10px);
+            transition:all .4s; position:relative; overflow:hidden;
         }
 
         .why-card::before {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(135deg, transparent, rgba(139,0,0,0.1));
-            opacity: 0; transition: opacity 0.4s;
+            content:''; position:absolute; inset:0;
+            background:linear-gradient(135deg,transparent,rgba(139,0,0,.1));
+            opacity:0; transition:opacity .4s;
         }
 
-        .why-card:hover { transform: translateY(-10px); border-color: rgba(139,0,0,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .why-card:hover::before { opacity: 1; }
+        .why-card:hover { transform:translateY(-8px); border-color:rgba(139,0,0,.3); box-shadow:0 20px 50px rgba(0,0,0,.5); }
+        .why-card:hover::before { opacity:1; }
 
-        .why-icon { font-size: 4rem; margin-bottom: 25px; display: inline-block; transition: all 0.3s; }
-        .why-card:hover .why-icon { transform: scale(1.1); }
-        .why-card h4 { font-size: 1.4rem; margin-bottom: 18px; color: var(--white); font-weight: 700; }
-        .why-card p  { color: var(--gray-light); line-height: 1.8; }
+        .why-icon { font-size:clamp(2.5rem,5vw,4rem); margin-bottom:clamp(15px,3vw,25px); display:inline-block; transition:all .3s; }
+        .why-card:hover .why-icon { transform:scale(1.1); }
+        .why-card h4 { font-size:clamp(1.1rem,2.5vw,1.4rem); margin-bottom:12px; color:var(--white); font-weight:700; }
+        .why-card p  { color:var(--gray-light); line-height:1.8; font-size:var(--fs-sm); }
 
-        /* ===== DONATION ===== */
-        .donation { padding: 100px 30px; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); }
-
-        .donation-form {
-            background: rgba(26,26,26,0.8); border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px; padding: 60px 50px;
-            backdrop-filter: blur(20px); box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            max-width: 700px; margin: 0 auto;
+        /* ===== DONATION SECTION ===== */
+        .donation {
+            padding:var(--sp-xl) 0;
+            background:rgba(0,0,0,.6); backdrop-filter:blur(10px);
+            position:relative; overflow:hidden;
         }
 
-        .form-title    { font-size: 2.2rem; text-align: center; margin-bottom: 15px; color: var(--white); font-weight: 800; }
-        .form-subtitle { text-align: center; color: var(--gray-light); margin-bottom: 45px; font-size: 1rem; }
-
-        .amount-options { display: grid; grid-template-columns: repeat(2,1fr); gap: 15px; margin-bottom: 30px; }
-
-        .amount-btn {
-            background: rgba(42,42,42,0.6); border: 2px solid rgba(255,255,255,0.15);
-            color: var(--white); padding: 30px 20px; border-radius: 12px;
-            cursor: pointer; transition: all 0.3s; text-align: center;
-            position: relative; overflow: hidden;
+        .donation::before {
+            content:''; position:absolute;
+            width:clamp(200px,50vw,600px); height:clamp(200px,50vw,600px);
+            border-radius:50%;
+            background:radial-gradient(circle,rgba(139,0,0,.07) 0%,transparent 70%);
+            top:-20%; right:-15%; pointer-events:none;
+            animation:rotateSlow 20s linear infinite;
         }
 
-        .amount-btn::before {
-            content: ''; position: absolute; top: 50%; left: 50%;
-            width: 0; height: 0; border-radius: 50%;
-            background: rgba(139,0,0,0.2);
-            transform: translate(-50%,-50%);
-            transition: width 0.4s, height 0.4s;
+        .donation::after {
+            content:''; position:absolute;
+            width:clamp(150px,40vw,400px); height:clamp(150px,40vw,400px);
+            border-radius:50%;
+            background:radial-gradient(circle,rgba(0,48,135,.07) 0%,transparent 70%);
+            bottom:-15%; left:-10%; pointer-events:none;
+            animation:rotateSlow 25s linear infinite reverse;
         }
 
-        .amount-btn:hover::before { width: 300px; height: 300px; }
-        .amount-btn:hover  { border-color: var(--red-medium); transform: translateY(-3px); }
-        .amount-btn.selected { border-color: var(--red-dark); background: rgba(139,0,0,0.3); box-shadow: 0 0 30px rgba(139,0,0,0.4); }
-
-        .amount-value  { font-size: 2.2rem; font-weight: 800; display: block; margin-bottom: 8px; position: relative; z-index: 1; }
-        .amount-impact { font-size: 0.85rem; color: var(--gray-light); position: relative; z-index: 1; }
-
-        .custom-amount { margin-bottom: 35px; }
-        .custom-amount label { display: block; margin-bottom: 12px; color: var(--gray-light); font-weight: 600; }
-        .custom-amount input {
-            width: 100%; padding: 18px 20px;
-            background: rgba(13,13,13,0.8); border: 2px solid rgba(255,255,255,0.15);
-            border-radius: 10px; color: var(--white);
-            font-size: 1.3rem; font-weight: 700; transition: all 0.3s;
-        }
-        .custom-amount input:focus { outline: none; border-color: var(--red-medium); box-shadow: 0 0 20px rgba(139,0,0,0.2); }
-
-        .form-group { margin-bottom: 25px; }
-        .form-group label { display: block; margin-bottom: 10px; color: var(--gray-light); font-size: 0.9rem; font-weight: 600; }
-        .form-group input {
-            width: 100%; padding: 15px 18px;
-            background: rgba(13,13,13,0.6); border: 2px solid rgba(255,255,255,0.15);
-            border-radius: 10px; color: var(--white); font-size: 1rem; transition: all 0.3s;
-        }
-        .form-group input:focus { outline: none; border-color: var(--red-medium); }
-        .form-group input::placeholder { color: rgba(255,255,255,0.3); }
-
-        .submit-btn {
-            width: 100%; padding: 20px;
-            background: linear-gradient(135deg, var(--red-dark), var(--red-medium));
-            color: var(--white); border: none; border-radius: 12px;
-            font-size: 1.2rem; font-weight: 800; cursor: pointer;
-            transition: all 0.3s; margin-top: 25px;
-            text-transform: uppercase; letter-spacing: 1px;
-            position: relative; overflow: hidden;
+        @keyframes rotateSlow {
+            from { transform:rotate(0deg) scale(1); }
+            50%  { transform:rotate(180deg) scale(1.1); }
+            to   { transform:rotate(360deg) scale(1); }
         }
 
-        .submit-btn::before {
-            content: ''; position: absolute; top: 50%; left: 50%;
-            width: 0; height: 0; background: rgba(255,255,255,0.2); border-radius: 50%;
-            transform: translate(-50%,-50%); transition: width 0.6s, height 0.6s;
-        }
-        .submit-btn:hover::before { width: 500px; height: 500px; }
-        .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(139,0,0,0.5); }
-
-        .paypal-donate-btn {
-            display: flex; align-items: center; justify-content: center; gap: 12px;
-            width: 100%; padding: 18px;
-            background: linear-gradient(135deg, #003087, #0057b3);
-            color: var(--white); border: none; border-radius: 12px;
-            font-size: 1.1rem; font-weight: 800; cursor: pointer;
-            transition: all 0.3s; margin-top: 15px;
-            text-transform: uppercase; letter-spacing: 1px;
-            text-decoration: none; position: relative; overflow: hidden;
+        /* ===== PAYPAL CARD ===== */
+        .paypal-card {
+            max-width:clamp(300px,95vw,620px);
+            margin:0 auto; position:relative; z-index:2;
         }
 
-        .paypal-donate-btn::before {
-            content: ''; position: absolute; top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-            transition: left 0.5s;
-        }
-        .paypal-donate-btn:hover::before { left: 100%; }
-        .paypal-donate-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,48,135,0.5); }
-
-        .divider {
-            display: flex; align-items: center; gap: 15px;
-            margin: 25px 0; color: var(--gray-light); font-size: 0.9rem;
-        }
-        .divider::before,.divider::after { content: ''; flex: 1; border-top: 1px solid rgba(255,255,255,0.1); }
-
-        .trust-badges {
-            display: flex; justify-content: center; gap: 25px;
-            margin-top: 35px; padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap;
-        }
-        .trust-badge { color: var(--gray-light); font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
-
-        /* ===== SUCCESS ===== */
-        .success-message { display: none; text-align: center; padding: 60px 40px; }
-        .success-message.active { display: block; animation: fadeInUp 0.6s; }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to   { opacity: 1; transform: translateY(0); }
+        .ornament {
+            position:absolute; pointer-events:none; z-index:1;
+            animation:ornamentFloat ease-in-out infinite; opacity:.12;
         }
 
-        .success-icon {
-            width: 100px; height: 100px;
-            background: linear-gradient(135deg, var(--red-dark), var(--red-medium));
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 4rem; margin: 0 auto 30px; animation: scaleIn 0.5s;
+        @keyframes ornamentFloat {
+            0%,100% { transform:translateY(0) rotate(0deg); }
+            50%      { transform:translateY(-15px) rotate(15deg); }
         }
 
-        @keyframes scaleIn {
-            0%   { transform: scale(0); }
-            50%  { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        .orn-1 { top:-30px; left:-40px; font-size:clamp(2rem,5vw,4rem); animation-duration:5s; }
+        .orn-2 { top:-25px; right:-35px; font-size:clamp(1.5rem,4vw,3rem); animation-duration:4s; animation-delay:-2s; }
+        .orn-3 { bottom:-30px; left:-30px; font-size:clamp(1.8rem,4.5vw,3.5rem); animation-duration:6s; animation-delay:-1s; }
+        .orn-4 { bottom:-25px; right:-40px; font-size:clamp(2rem,5vw,4rem); animation-duration:5.5s; animation-delay:-3s; }
+
+        .paypal-wrapper {
+            background:rgba(14,14,14,.92);
+            border:1px solid rgba(255,255,255,.1);
+            border-radius:clamp(16px,3vw,28px);
+            padding:clamp(25px,6vw,55px) clamp(20px,5vw,50px);
+            backdrop-filter:blur(30px);
+            box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.04),inset 0 1px 0 rgba(255,255,255,.07);
+            position:relative; overflow:hidden;
         }
 
-        .success-message h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--white); font-weight: 800; }
-        .success-message p  { color: var(--gray-light); font-size: 1.1rem; margin-bottom: 15px; line-height: 1.8; }
-        .success-amount { color: #4caf50; font-weight: 800; font-size: 2rem; }
+        .paypal-wrapper::before {
+            content:''; position:absolute; top:0; left:50%;
+            transform:translateX(-50%); width:70%; height:2px;
+            background:linear-gradient(90deg,transparent,rgba(0,87,179,.5),transparent);
+        }
+
+        /* Secure badges */
+        .secure-badge {
+            display:flex; align-items:center; justify-content:center;
+            gap:clamp(6px,1.5vw,10px); margin-bottom:clamp(20px,3vw,35px);
+            flex-wrap:wrap;
+        }
+
+        .secure-chip {
+            background:rgba(39,174,96,.15); border:1px solid rgba(39,174,96,.3);
+            color:#4caf50; padding:clamp(4px,1vw,6px) clamp(10px,2vw,16px);
+            border-radius:20px; font-size:var(--fs-xs); font-weight:700;
+            text-transform:uppercase; letter-spacing:.8px;
+            display:flex; align-items:center; gap:5px;
+        }
+
+        /* Live counter */
+        .live-counter {
+            display:flex; align-items:center; justify-content:center; gap:10px;
+            background:rgba(39,174,96,.07); border:1px solid rgba(39,174,96,.18);
+            border-radius:50px; padding:clamp(10px,2vw,12px) clamp(15px,3vw,25px);
+            margin-bottom:clamp(25px,4vw,40px);
+        }
+
+        .live-dot {
+            width:9px; height:9px; background:#4caf50; border-radius:50%;
+            animation:livePulse 1.5s ease-in-out infinite;
+            box-shadow:0 0 10px rgba(76,175,80,.5); flex-shrink:0;
+        }
+
+        @keyframes livePulse {
+            0%,100% { transform:scale(1); opacity:1; }
+            50%      { transform:scale(1.4); opacity:.7; }
+        }
+
+        .live-text { font-size:var(--fs-sm); color:rgba(255,255,255,.7); }
+        .live-text strong { color:#4caf50; }
+
+        /* Headline */
+        .donate-headline { text-align:center; margin-bottom:clamp(20px,4vw,40px); }
+        .donate-headline h2 { font-size:var(--fs-2xl); font-weight:800; color:var(--white); margin-bottom:10px; line-height:1.2; }
+        .donate-headline p  { color:var(--gray-light); font-size:var(--fs-md); line-height:1.7; }
+
+        /* Gold divider */
+        .gold-divider {
+            display:flex; align-items:center; gap:15px;
+            margin:0 0 clamp(20px,4vw,40px);
+        }
+        .gold-divider::before,.gold-divider::after {
+            content:''; flex:1; height:1px;
+            background:linear-gradient(90deg,transparent,var(--gold),transparent);
+        }
+        .gold-divider span { color:var(--gold); font-size:1.1rem; }
+
+        /* Impact chips */
+        .impact-row {
+            display:grid; grid-template-columns:repeat(3,1fr);
+            gap:clamp(8px,2vw,20px); margin-bottom:clamp(20px,4vw,45px);
+        }
+
+        .impact-chip {
+            background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07);
+            border-radius:clamp(8px,2vw,14px); padding:clamp(12px,2.5vw,20px) clamp(8px,2vw,15px);
+            text-align:center; transition:all .3s;
+        }
+
+        .impact-chip:hover { border-color:rgba(0,87,179,.3); background:rgba(0,87,179,.06); transform:translateY(-3px); }
+
+        .impact-chip-icon { font-size:clamp(1.4rem,3.5vw,2rem); margin-bottom:8px; display:block; }
+        .impact-chip-num  { font-size:clamp(1rem,2.5vw,1.4rem); font-weight:800; color:var(--white); display:block; margin-bottom:4px; }
+        .impact-chip-lbl  { font-size:clamp(.65rem,1.8vw,.78rem); color:var(--gray-light); text-transform:uppercase; letter-spacing:.8px; }
+
+        /* Testimonial */
+        .testimonial-strip {
+            background:rgba(255,255,255,.03); border-left:3px solid var(--red-medium);
+            border-radius:0 10px 10px 0;
+            padding:clamp(15px,3vw,20px) clamp(15px,3vw,25px);
+            margin-bottom:clamp(20px,4vw,40px);
+            font-style:italic; color:rgba(255,255,255,.6);
+            font-size:var(--fs-sm); line-height:1.7;
+        }
+
+        /* Amount pills */
+        .amount-display {
+            display:grid; grid-template-columns:repeat(4,1fr);
+            gap:clamp(6px,1.5vw,12px); margin-bottom:clamp(20px,4vw,40px);
+        }
+
+        .amount-pill {
+            background:rgba(0,48,135,.1); border:1px solid rgba(0,87,179,.18);
+            border-radius:50px; padding:clamp(10px,2vw,12px) clamp(6px,1.5vw,8px);
+            text-align:center; transition:all .3s;
+        }
+
+        .amount-pill:hover { background:rgba(0,48,135,.22); border-color:rgba(0,87,179,.45); transform:translateY(-3px); }
+
+        .amount-pill .pill-val  { font-size:clamp(1rem,2.5vw,1.3rem); font-weight:800; color:var(--white); display:block; }
+        .amount-pill .pill-desc { font-size:clamp(.6rem,1.6vw,.7rem); color:var(--gray-light); display:block; margin-top:3px; }
+
+        /* Main PayPal Button */
+        .paypal-main-btn {
+            display:flex; align-items:center; justify-content:center; gap:clamp(8px,2vw,15px);
+            width:100%; padding:clamp(16px,3.5vw,22px) clamp(20px,4vw,30px);
+            background:linear-gradient(135deg,#003087 0%,#0057b3 50%,#009cde 100%);
+            background-size:200% 100%;
+            color:var(--white); border:none; border-radius:clamp(12px,2vw,16px);
+            font-size:clamp(1rem,2.8vw,1.3rem); font-weight:800;
+            cursor:pointer; transition:all .4s; text-decoration:none;
+            position:relative; overflow:hidden; letter-spacing:.5px;
+            box-shadow:0 10px 40px rgba(0,87,179,.5),0 0 0 1px rgba(255,255,255,.08);
+            animation:paypalPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes paypalPulse {
+            0%,100% { box-shadow:0 10px 40px rgba(0,87,179,.5),0 0 0 1px rgba(255,255,255,.08); }
+            50%      { box-shadow:0 10px 60px rgba(0,87,179,.75),0 0 0 1px rgba(255,255,255,.18); }
+        }
+
+        .paypal-main-btn::before {
+            content:''; position:absolute; top:0; left:-100%;
+            width:100%; height:100%;
+            background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
+            transition:left .6s;
+        }
+        .paypal-main-btn:hover::before { left:100%; }
+        .paypal-main-btn:hover { transform:translateY(-4px); box-shadow:0 20px 60px rgba(0,87,179,.7); }
+
+        .paypal-btn-icon { font-size:clamp(1.3rem,3vw,2rem); }
+
+        .btn-subtext {
+            text-align:center; margin-top:clamp(10px,2vw,15px);
+            color:var(--gray-light); font-size:var(--fs-xs);
+            display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:wrap;
+        }
+
+        /* Trust strip */
+        .trust-strip {
+            display:flex; justify-content:center;
+            gap:clamp(10px,2.5vw,30px); margin-top:clamp(20px,4vw,35px);
+            padding-top:clamp(20px,3vw,30px);
+            border-top:1px solid rgba(255,255,255,.06); flex-wrap:wrap;
+        }
+
+        .trust-item { display:flex; align-items:center; gap:6px; color:var(--gray-light); font-size:var(--fs-xs); }
+        .trust-item span:first-child { font-size:clamp(.9rem,2vw,1.1rem); }
 
         /* ===== FOOTER ===== */
         footer {
-            padding: 60px 30px 30px;
-            background: rgba(13,13,13,0.97);
-            border-top: 1px solid rgba(255,255,255,0.08);
+            padding:clamp(40px,6vw,60px) 0 clamp(20px,4vw,30px);
+            background:rgba(13,13,13,.97);
+            border-top:1px solid rgba(255,255,255,.08);
         }
 
         .footer-content {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
-            gap: 50px; margin-bottom: 50px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));
+            gap:clamp(25px,4vw,50px); margin-bottom:clamp(30px,5vw,50px);
         }
 
-        .footer-section h3 { font-size: 1.1rem; margin-bottom: 20px; color: var(--white); font-weight: 700; }
+        .footer-section h3 { font-size:clamp(1rem,2.5vw,1.1rem); margin-bottom:clamp(15px,3vw,20px); color:var(--white); font-weight:700; }
         .footer-section p,
-        .footer-section li { color: var(--gray-light); line-height: 1.8; margin-bottom: 12px; font-size: 0.95rem; }
-        .footer-section ul { list-style: none; }
-        .footer-section a  { color: var(--gray-light); text-decoration: none; transition: color 0.3s; }
-        .footer-section a:hover { color: var(--white); }
+        .footer-section li { color:var(--gray-light); line-height:1.8; margin-bottom:10px; font-size:var(--fs-sm); }
+        .footer-section ul { list-style:none; }
+        .footer-section a  { color:var(--gray-light); text-decoration:none; transition:color .3s; }
+        .footer-section a:hover { color:var(--white); }
 
         .contact-item {
-            display: flex; align-items: center; gap: 10px;
-            color: var(--gray-light); margin-bottom: 14px;
-            font-size: 0.95rem; transition: all 0.3s;
-            text-decoration: none; cursor: pointer;
-            padding: 8px 12px; border-radius: 8px;
-            border: 1px solid transparent;
+            display:flex; align-items:flex-start; gap:10px;
+            color:var(--gray-light); margin-bottom:12px;
+            font-size:var(--fs-sm); transition:all .3s;
+            text-decoration:none; cursor:pointer;
+            padding:clamp(7px,1.5vw,8px) clamp(10px,2vw,12px);
+            border-radius:8px; border:1px solid transparent;
+            word-break:break-word;
         }
 
-        .contact-item:hover {
-            color: var(--white);
-            background: rgba(255,255,255,0.05);
-            border-color: rgba(255,255,255,0.1);
-            transform: translateX(5px);
-        }
+        .contact-item:hover { color:var(--white); background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.1); }
+        .contact-icon { font-size:1.1rem; flex-shrink:0; margin-top:2px; }
 
-        .contact-item .contact-icon { font-size: 1.2rem; flex-shrink: 0; }
-
-        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-links { display:flex; gap:clamp(8px,2vw,15px); margin-top:clamp(15px,3vw,20px); flex-wrap:wrap; }
 
         .social-link {
-            width: 45px; height: 45px;
-            background: rgba(42,42,42,0.6); border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 1.3rem; transition: all 0.3s; cursor: pointer;
+            width:clamp(38px,8vw,45px); height:clamp(38px,8vw,45px);
+            background:rgba(42,42,42,.6); border:1px solid rgba(255,255,255,.1);
+            border-radius:50%; display:flex; align-items:center; justify-content:center;
+            font-size:clamp(1rem,2.5vw,1.3rem); transition:all .3s; cursor:pointer;
         }
 
-        .social-link:hover { background: var(--red-dark); border-color: var(--red-dark); transform: translateY(-3px); }
+        .social-link:hover { background:var(--red-dark); border-color:var(--red-dark); transform:translateY(-3px); }
 
-        /* Footer Bottom */
         .footer-bottom {
-            text-align: center; padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            color: var(--gray-light); font-size: 0.9rem;
-        }
-
-        .footer-bottom .dev-credit {
-            margin-top: 8px;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.3);
-            letter-spacing: 0.5px;
+            text-align:center; padding-top:clamp(20px,3vw,30px);
+            border-top:1px solid rgba(255,255,255,.08);
+            color:var(--gray-light); font-size:var(--fs-xs); line-height:1.8;
         }
 
         .footer-modal-link {
-            color: var(--gray-light); text-decoration: none;
-            margin: 0 12px; cursor: pointer; transition: color 0.3s;
-            background: none; border: none; font-size: 0.9rem;
-            font-family: inherit; padding: 0;
+            color:var(--gray-light); text-decoration:none;
+            margin:0 clamp(6px,1.5vw,12px); cursor:pointer; transition:color .3s;
+            background:none; border:none; font-size:var(--fs-xs);
+            font-family:inherit; padding:0;
         }
-        .footer-modal-link:hover { color: var(--white); }
+        .footer-modal-link:hover { color:var(--white); }
 
         /* ===== MODAL ===== */
         .modal-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.85);
-            z-index: 9999; display: flex; align-items: center; justify-content: center;
-            padding: 20px; opacity: 0; visibility: hidden;
-            transition: all 0.4s ease; backdrop-filter: blur(8px);
+            position:fixed; inset:0; background:rgba(0,0,0,.85);
+            z-index:9999; display:flex; align-items:center; justify-content:center;
+            padding:clamp(15px,4vw,20px); opacity:0; visibility:hidden;
+            transition:all .4s ease; backdrop-filter:blur(8px);
         }
 
-        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-overlay.active { opacity:1; visibility:visible; }
 
         .modal-box {
-            background: linear-gradient(135deg, #1a1a1a 0%, #222 100%);
-            border: 1px solid rgba(255,255,255,0.12); border-radius: 20px;
-            padding: 50px 45px; max-width: 680px; width: 100%;
-            max-height: 85vh; overflow-y: auto; position: relative;
-            transform: translateY(30px) scale(0.97); transition: transform 0.4s ease;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+            background:linear-gradient(135deg,#1a1a1a 0%,#222 100%);
+            border:1px solid rgba(255,255,255,.12); border-radius:clamp(14px,2.5vw,20px);
+            padding:clamp(25px,5vw,50px) clamp(20px,5vw,45px);
+            max-width:680px; width:100%; max-height:85vh; overflow-y:auto;
+            position:relative; transform:translateY(30px) scale(.97);
+            transition:transform .4s ease; box-shadow:0 30px 80px rgba(0,0,0,.8);
         }
 
-        .modal-overlay.active .modal-box { transform: translateY(0) scale(1); }
-        .modal-box::-webkit-scrollbar { width: 6px; }
-        .modal-box::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 10px; }
-        .modal-box::-webkit-scrollbar-thumb { background: var(--red-dark); border-radius: 10px; }
+        .modal-overlay.active .modal-box { transform:translateY(0) scale(1); }
+        .modal-box::-webkit-scrollbar { width:6px; }
+        .modal-box::-webkit-scrollbar-track { background:rgba(255,255,255,.05); border-radius:10px; }
+        .modal-box::-webkit-scrollbar-thumb { background:var(--red-dark); border-radius:10px; }
 
         .modal-close {
-            position: absolute; top: 20px; right: 25px;
-            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-            color: var(--white); width: 40px; height: 40px; border-radius: 50%;
-            font-size: 1.3rem; cursor: pointer; transition: all 0.3s;
-            display: flex; align-items: center; justify-content: center;
+            position:absolute; top:clamp(12px,2vw,20px); right:clamp(15px,3vw,25px);
+            background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15);
+            color:var(--white); width:clamp(32px,7vw,40px); height:clamp(32px,7vw,40px);
+            border-radius:50%; font-size:1.1rem; cursor:pointer;
+            transition:all .3s; display:flex; align-items:center; justify-content:center;
         }
-        .modal-close:hover { background: var(--red-dark); border-color: var(--red-dark); transform: rotate(90deg); }
+
+        .modal-close:hover { background:var(--red-dark); border-color:var(--red-dark); transform:rotate(90deg); }
 
         .modal-header {
-            display: flex; align-items: center; gap: 15px;
-            margin-bottom: 30px; padding-bottom: 25px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display:flex; align-items:center; gap:clamp(10px,2vw,15px);
+            margin-bottom:clamp(20px,4vw,30px); padding-bottom:clamp(15px,3vw,25px);
+            border-bottom:1px solid rgba(255,255,255,.1);
         }
 
         .modal-header-icon {
-            width: 55px; height: 55px;
-            background: linear-gradient(135deg, var(--red-dark), var(--red-medium));
-            border-radius: 12px; display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; flex-shrink: 0;
+            width:clamp(42px,8vw,55px); height:clamp(42px,8vw,55px);
+            background:linear-gradient(135deg,var(--red-dark),var(--red-medium));
+            border-radius:12px; display:flex; align-items:center; justify-content:center;
+            font-size:clamp(1.3rem,3vw,1.8rem); flex-shrink:0;
         }
 
-        .modal-header h2 { font-size: 1.7rem; color: var(--white); font-weight: 800; line-height: 1.2; }
-        .modal-body p { color: rgba(255,255,255,0.75); line-height: 2; font-size: 1rem; margin-bottom: 20px; }
-        .modal-body p:last-child { margin-bottom: 0; }
+        .modal-header h2 { font-size:clamp(1.3rem,3.5vw,1.7rem); color:var(--white); font-weight:800; line-height:1.2; }
+        .modal-body p { color:rgba(255,255,255,.75); line-height:2; font-size:var(--fs-sm); margin-bottom:18px; }
+        .modal-body p:last-child { margin-bottom:0; }
 
         .modal-footer-note {
-            margin-top: 30px; padding-top: 25px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            display: flex; align-items: center; gap: 12px;
+            margin-top:clamp(20px,4vw,30px); padding-top:clamp(15px,3vw,25px);
+            border-top:1px solid rgba(255,255,255,.08);
+            display:flex; align-items:center; gap:10px;
         }
-        .modal-footer-note span { color: var(--gray-light); font-size: 0.85rem; line-height: 1.6; }
+        .modal-footer-note span { color:var(--gray-light); font-size:var(--fs-xs); line-height:1.6; }
 
         /* ===== SCROLL TOP ===== */
         .scroll-top {
-            position: fixed; bottom: 30px; right: 30px;
-            width: 55px; height: 55px; background: var(--red-dark);
-            color: var(--white); border: none; border-radius: 50%;
-            font-size: 1.5rem; cursor: pointer; display: none;
-            align-items: center; justify-content: center;
-            z-index: 998; transition: all 0.3s; box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            position:fixed; bottom:clamp(20px,4vw,30px); right:clamp(15px,3vw,30px);
+            width:clamp(42px,8vw,55px); height:clamp(42px,8vw,55px);
+            background:var(--red-dark); color:var(--white); border:none; border-radius:50%;
+            font-size:clamp(1.1rem,3vw,1.5rem); cursor:pointer; display:none;
+            align-items:center; justify-content:center;
+            z-index:998; transition:all .3s; box-shadow:0 5px 20px rgba(0,0,0,.3);
+        }
+        .scroll-top.visible { display:flex; }
+        .scroll-top:hover   { background:var(--red-medium); transform:translateY(-4px); }
+
+        /* ===== HIDE SIDE DECOR ON SMALL ===== */
+        @media (max-width:900px) {
+            .side-decoration { display:none; }
+            .ornament { display:none; }
         }
 
-        .scroll-top.visible { display: flex; }
-        .scroll-top:hover   { background: var(--red-medium); transform: translateY(-5px); }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .hero { background-attachment: scroll; }
-            .hero-content h1 { font-size: 2rem; }
-            .hero-subtitle { font-size: 1rem; }
-            .hero-stats { gap: 20px; }
-            nav { display: none; }
-            nav.open { display: flex; flex-direction: column; width: 100%; gap: 10px; margin-top: 15px; }
-            nav.open a { margin-left: 0; }
-            .mobile-menu-toggle { display: block; }
-            .cta-buttons { flex-direction: column; align-items: center; }
-            .amount-options { grid-template-columns: 1fr; }
-            .vm-grid { grid-template-columns: 1fr; }
-            .why-grid { grid-template-columns: 1fr; }
-            .donation-form { padding: 35px 20px; }
-            .content-block { padding: 30px 25px; }
-            .section-title { font-size: 2rem; }
-            .modal-box { padding: 35px 25px; }
-            .modal-header h2 { font-size: 1.3rem; }
-            .image-wrapper img { height: 280px; }
-            .toast-container { max-width: 260px; left: 15px; bottom: 20px; }
-            .side-decoration { display: none; }
+        @media (max-width:480px) {
+            .amount-display { grid-template-columns:repeat(2,1fr); }
+            .impact-row     { grid-template-columns:repeat(3,1fr); gap:6px; }
         }
     </style>
 </head>
@@ -793,6 +958,9 @@
     <div class="wave"></div>
     <div class="gradient-overlay"></div>
 </div>
+
+<!-- STARS -->
+<div class="stars-container" id="starsContainer"></div>
 
 <!-- FLYING DOVES -->
 <div class="doves-container">
@@ -831,10 +999,10 @@
                 <div class="logo-icon">🕊️</div>
                 GAZA VOICE
             </div>
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
             <nav id="mainNav">
                 <a href="#home">Home</a>
-                <a href="#who-we-are">About Us</a>
+                <a href="#who-we-are">About</a>
                 <a href="#vision">Vision</a>
                 <a href="#why-us">Why Us</a>
                 <a href="#donate">Donate</a>
@@ -888,8 +1056,8 @@
         <p class="section-subtitle">Standing with Gaza's families in their darkest hours</p>
         <div class="content-block">
             <h3>Our Story</h3>
-            <p>We are an independent humanitarian organization, born from the heart of suffering in the Gaza Strip. We exist to be the bridge that connects hope with grieving families — a group of volunteers, paramedics, and activists who believe that the right to life and dignity is inalienable, no matter how severe the siege or how heavy the weight of war.</p>
-            <p>Our team operates on the ground, witnessing firsthand the struggles of families who have lost everything. We don't just report the news — we document the truth and transform it into action. Every donation we receive becomes a hot meal, a dose of medicine, or a tent sheltering a child who has lost their home.</p>
+            <p>We are an independent humanitarian organization, born from the heart of suffering in the Gaza Strip. We exist to be the bridge that connects hope with grieving families — a group of volunteers, paramedics, and activists who believe that the right to life and dignity is inalienable.</p>
+            <p>Every donation we receive becomes a hot meal, a dose of medicine, or a tent sheltering a child who has lost their home.</p>
         </div>
     </div>
 </section>
@@ -900,10 +1068,10 @@
         <div class="image-wrapper">
             <img src="https://s.france24.com/media/display/7ce8230c-6faa-11f0-9775-005056a97e36/w:1280/p:4x3/Gaza-new-3.jpg"
                  alt="Gaza Crisis - France 24" loading="lazy"
-                 onerror="this.style.height='300px';this.style.background='#1a1a1a';">
+                 onerror="this.style.height='200px';this.style.background='#1a1a1a';">
             <div class="image-caption">
                 <h3>A Reality the World Must See</h3>
-                <p>Every image tells a thousand stories. Behind each frame is a family, a child, a life disrupted by forces beyond their control. Your support helps us stay present, document the truth, and turn awareness into action.</p>
+                <p>Every image tells a thousand stories. Your support helps us document the truth and turn awareness into action.</p>
             </div>
         </div>
     </div>
@@ -918,14 +1086,14 @@
             <div class="vm-card">
                 <div class="vm-icon">🎯</div>
                 <h3>Our Vision</h3>
-                <p>We strive to be the first and most trusted source for conveying the field reality in Gaza as it truly is — providing a safe and direct channel to deliver urgent humanitarian aid to those who need it most, far from bureaucratic complications.</p>
-                <p>Our vision is a Gaza where every family has access to basic needs, where children sleep safely, and where hope is not a luxury — but a right for all.</p>
+                <p>To be the most trusted source for conveying the field reality in Gaza, providing a safe and direct channel to deliver urgent humanitarian aid — far from bureaucratic complications.</p>
+                <p>A Gaza where every family has access to basic needs, and hope is a right for all.</p>
             </div>
             <div class="vm-card">
                 <div class="vm-icon">💪</div>
                 <h3>Our Mission</h3>
-                <p>Our mission is resilience for life. We work to document the truth through words and images, and to transform every donation into a meal, a dose of medicine, or a tent that shelters a child who has lost their home.</p>
-                <p>We don't just convey the news — we make a real difference in people's lives on the ground. We stand as proof that humanity still exists, even amidst the rubble.</p>
+                <p>Resilience for life. We document the truth through words and images, transforming every donation into a meal, medicine, or shelter for a child who has lost their home.</p>
+                <p>We don't just report the news — we make a real difference on the ground.</p>
             </div>
         </div>
     </div>
@@ -937,10 +1105,10 @@
         <div class="image-wrapper">
             <img src="https://www.aljazeera.net/wp-content/uploads/2024/03/RC20L6A6H6G3-1710425780.jpg?resize=770%2C513&quality=80"
                  alt="Gaza Crisis - Al Jazeera" loading="lazy"
-                 onerror="this.style.height='300px';this.style.background='#1a1a1a';">
+                 onerror="this.style.height='200px';this.style.background='#1a1a1a';">
             <div class="image-caption">
                 <h3>Your Fingerprint Is the Difference</h3>
-                <p>We believe that small contributions from many create miracles. By standing with us, you're not just supporting an organization — you're giving a family in Gaza a new reason to wake up tomorrow and believe in a better future.</p>
+                <p>Small contributions from many create miracles. You're giving a family a new reason to wake up tomorrow with hope.</p>
             </div>
         </div>
     </div>
@@ -955,93 +1123,102 @@
             <div class="why-card">
                 <div class="why-icon">🏃</div>
                 <h4>Ground Presence</h4>
-                <p>Our team is present in all governorates of the Strip — from north to south — ensuring aid reaches ground zero where it's needed most.</p>
+                <p>Our team is present in all governorates — from north to south — ensuring aid reaches ground zero.</p>
             </div>
             <div class="why-card">
                 <div class="why-icon">📊</div>
                 <h4>Total Transparency</h4>
-                <p>We commit to publishing regular reports documented with photos and videos for every campaign, so donors can see the impact of their contribution with their own eyes.</p>
+                <p>Regular reports with photos and videos for every campaign, so donors see the impact of every dollar.</p>
             </div>
             <div class="why-card">
                 <div class="why-icon">⚡</div>
                 <h4>Rapid Response</h4>
-                <p>We focus on urgent interventions during major crises — from providing drinking water to emergency medical supplies — ensuring help arrives exactly when it matters most.</p>
+                <p>Urgent interventions during crises — from water to medical supplies — delivered when it matters most.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- DONATION -->
+<!-- DONATION SECTION -->
 <section id="donate" class="donation">
     <div class="container">
         <h2 class="section-title">Make Your Impact Today</h2>
-        <p class="section-subtitle">100% of every donation goes directly to families in need</p>
+        <p class="section-subtitle">Every dollar reaches those who need it most — directly and transparently</p>
 
-        <div class="donation-form" id="donationFormContainer">
-            <h3 class="form-title" id="formTitle">Choose Your Contribution</h3>
-            <p class="form-subtitle" id="formSubtitle">Every dollar makes a difference</p>
+        <div class="paypal-card">
+            <div class="ornament orn-1">🕊️</div>
+            <div class="ornament orn-2">🌿</div>
+            <div class="ornament orn-3">🌿</div>
+            <div class="ornament orn-4">🕊️</div>
 
-            <div class="amount-options" id="amountOptions">
-                <button class="amount-btn" onclick="selectAmount(this,30)">
-                    <span class="amount-value">$30</span>
-                    <span class="amount-impact">Feed 6 families</span>
-                </button>
-                <button class="amount-btn" onclick="selectAmount(this,75)">
-                    <span class="amount-value">$75</span>
-                    <span class="amount-impact">Medical supplies</span>
-                </button>
-                <button class="amount-btn" onclick="selectAmount(this,150)">
-                    <span class="amount-value">$150</span>
-                    <span class="amount-impact">Emergency shelter</span>
-                </button>
-                <button class="amount-btn" onclick="selectAmount(this,300)">
-                    <span class="amount-value">$300</span>
-                    <span class="amount-impact">Complete family kit</span>
-                </button>
-            </div>
+            <div class="paypal-wrapper">
 
-            <div class="custom-amount" id="customAmountDiv">
-                <label>Or enter a custom amount:</label>
-                <input type="number" id="customAmount" placeholder="$0.00" min="5" step="0.01" oninput="updateCustomAmount(this.value)">
-            </div>
-
-            <form id="donationForm" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label>Full Name *</label>
-                    <input type="text" id="name" required placeholder="John Doe">
-                </div>
-                <div class="form-group">
-                    <label>Email Address *</label>
-                    <input type="email" id="email" required placeholder="john@example.com">
-                </div>
-                <div class="form-group">
-                    <label>Phone Number (Optional)</label>
-                    <input type="tel" id="phone" placeholder="+1 234 567 8900">
+                <div class="secure-badge">
+                    <div class="secure-chip">✓ Verified Secure</div>
+                    <div class="secure-chip" style="background:rgba(0,87,179,.15);border-color:rgba(0,87,179,.3);color:#4fa3e0;">🅿️ PayPal Protected</div>
                 </div>
 
-                <button type="submit" class="submit-btn">
-                    Complete Donation — <span id="finalAmount">$0</span>
-                </button>
+                <div class="live-counter">
+                    <div class="live-dot"></div>
+                    <div class="live-text"><strong id="liveCount">247</strong> people donated in the last 24 hours</div>
+                </div>
 
-                <div class="divider">or donate securely via</div>
+                <div class="donate-headline">
+                    <h2>Your Donation Saves Lives</h2>
+                    <p>100% of your contribution goes directly to families in Gaza with full transparency</p>
+                </div>
+
+                <div class="gold-divider"><span>🕊️</span></div>
+
+                <div class="impact-row">
+                    <div class="impact-chip">
+                        <span class="impact-chip-icon">🍲</span>
+                        <span class="impact-chip-num">18,400</span>
+                        <span class="impact-chip-lbl">Meals Served</span>
+                    </div>
+                    <div class="impact-chip">
+                        <span class="impact-chip-icon">🏠</span>
+                        <span class="impact-chip-num">340</span>
+                        <span class="impact-chip-lbl">Shelters Built</span>
+                    </div>
+                    <div class="impact-chip">
+                        <span class="impact-chip-icon">💊</span>
+                        <span class="impact-chip-num">1,250</span>
+                        <span class="impact-chip-lbl">Treated</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-strip">
+                    "I never lost hope, but I was losing strength. Your kindness gave me both back."
+                    <br><strong style="color:rgba(255,255,255,.45);font-size:.82rem;">— Amira, Mother of Four, Northern Gaza</strong>
+                </div>
+
+                <div class="amount-display">
+                    <div class="amount-pill"><span class="pill-val">$30</span><span class="pill-desc">Feed 6 families</span></div>
+                    <div class="amount-pill"><span class="pill-val">$75</span><span class="pill-desc">Medical kit</span></div>
+                    <div class="amount-pill"><span class="pill-val">$150</span><span class="pill-desc">Emergency shelter</span></div>
+                    <div class="amount-pill"><span class="pill-val">$300</span><span class="pill-desc">Full family kit</span></div>
+                </div>
+
+                <div class="gold-divider"><span>✦</span></div>
 
                 <a href="https://www.paypal.com/donate/?hosted_button_id=WJUGK5BRFMGJQ"
-                   target="_blank" rel="noopener" class="paypal-donate-btn">
-                    <span>🅿️</span> Donate via PayPal
+                   target="_blank" rel="noopener"
+                   class="paypal-main-btn">
+                    <span class="paypal-btn-icon">🅿️</span>
+                    Donate Securely via PayPal
                 </a>
 
-                <div class="trust-badges">
-                    <div class="trust-badge">🔒 100% Secure</div>
-                    <div class="trust-badge">✓ Tax Deductible</div>
-                    <div class="trust-badge">🛡️ Privacy Protected</div>
+                <div class="btn-subtext">
+                    🔒 Encrypted &amp; Secure &nbsp;·&nbsp; Instant Receipt &nbsp;·&nbsp; Cancel Anytime
                 </div>
-            </form>
 
-            <div class="success-message" id="successMessage">
-                <div class="success-icon">✓</div>
-                <h2>Thank You For Your Humanity</h2>
-                <p>Your generous donation of <span class="success-amount" id="donatedAmount">$0</span> will directly help families in Gaza.</p>
-                <p style="font-size:0.95rem;">A receipt has been sent to your email address.</p>
+                <div class="trust-strip">
+                    <div class="trust-item"><span>🔒</span><span>SSL Encrypted</span></div>
+                    <div class="trust-item"><span>✓</span><span>Tax Deductible</span></div>
+                    <div class="trust-item"><span>🌍</span><span>Worldwide Accepted</span></div>
+                    <div class="trust-item"><span>💙</span><span>100% To Gaza</span></div>
+                </div>
             </div>
         </div>
     </div>
@@ -1051,15 +1228,17 @@
 <footer>
     <div class="container">
         <div class="footer-content">
-
-            <!-- About -->
             <div class="footer-section">
                 <h3>🕊️ Gaza Voice</h3>
-                <p>An independent humanitarian organization dedicated to providing emergency relief and documenting the truth from Gaza.</p>
-                
+                <p>An independent humanitarian organization by Saif Aburok, dedicated to emergency relief and documenting the truth from Gaza.</p>
+                <div class="social-links">
+                    <div class="social-link">📘</div>
+                    <div class="social-link">🐦</div>
+                    <div class="social-link">📷</div>
+                    <div class="social-link">📹</div>
+                </div>
             </div>
 
-            <!-- Quick Links -->
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
@@ -1071,50 +1250,31 @@
                 </ul>
             </div>
 
-            <!-- Contact -->
             <div class="footer-section">
                 <h3>Contact Us</h3>
-
-                <!-- WhatsApp -->
-                <a href="https://wa.me/972598337311"
-                   target="_blank" rel="noopener"
-                   class="contact-item">
+                <a href="https://wa.me/972598337311" target="_blank" rel="noopener" class="contact-item">
                     <span class="contact-icon">💬</span>
-                    <span>+972 598 337 311 (WhatsApp)</span>
+                    <span>+972 598 337 311</span>
                 </a>
-
-                <!-- Email -->
-                <a href="mailto:seifrouk79@gmail.com"
-                   class="contact-item">
+                <a href="mailto:seifrouk79@gmail.com" class="contact-item">
                     <span class="contact-icon">📧</span>
                     <span>seifrouk79@gmail.com</span>
                 </a>
-
-                <!-- Location -->
                 <div class="contact-item">
                     <span class="contact-icon">📍</span>
                     <span>Gaza Strip, Palestine</span>
                 </div>
-
-                <!-- Press -->
-                
             </div>
 
-            <!-- Legal -->
             <div class="footer-section">
                 
             </div>
-
         </div>
 
-        <!-- Footer Bottom -->
         <div class="footer-bottom">
-            <p>
-                © 2024 Gaza Voice - The Pulse of Humanity Amidst the Rubble.
-                Developed by <strong style="color:rgba(255,255,255,0.6);">Saif Aburok</strong>.
-                All rights reserved.
-            </p>
-            <div style="margin-top:18px; display:flex; justify-content:center; flex-wrap:wrap; gap:5px;">
+            <p>© 2024 Gaza Voice — The Pulse of Humanity Amidst the Rubble.<br>
+            Developed by <strong style="color:rgba(255,255,255,.6);">Saif Aburok</strong>. All rights reserved.</p>
+            <div style="margin-top:15px;display:flex;justify-content:center;flex-wrap:wrap;gap:5px;">
                 <button class="footer-modal-link" onclick="openModal('privacy')">Privacy Policy</button>
                 <span style="color:#444;">|</span>
                 <button class="footer-modal-link" onclick="openModal('terms')">Terms of Service</button>
@@ -1134,12 +1294,12 @@
             <h2>Privacy Policy</h2>
         </div>
         <div class="modal-body">
-            <p>We are fully committed to protecting your privacy and securing your personal data. The information we collect during the donation process — such as your name, email address, and payment details — is used solely for the purpose of processing your contribution and sending you updates on the real-world impact of your support.</p>
-            <p>We do not sell, rent, or share your personal information with any third parties under any circumstances. Your trust is the foundation of our work, and we take that responsibility seriously.</p>
-            <p>We utilize advanced encryption protocols — including SSL/TLS technology — to ensure the complete safety and confidentiality of all your financial transactions.</p>
-            <p>You have the right to request access to, correction of, or deletion of your personal data at any time by contacting us at <strong style="color:#fff;">seifrouk79@gmail.com</strong>.</p>
+            <p>We are fully committed to protecting your privacy. Information collected during donations is used solely to process contributions and send impact updates.</p>
+            <p>We do not sell or share your personal information with any third parties.</p>
+            <p>Advanced SSL/TLS encryption ensures the safety of all financial transactions.</p>
+            <p>Contact <strong style="color:#fff;">seifrouk79@gmail.com</strong> to access, correct, or delete your data.</p>
         </div>
-        <div class="modal-footer-note"><span>🕊️</span><span>Gaza Voice — We protect your data with the same dedication we bring to protecting lives on the ground.</span></div>
+        <div class="modal-footer-note"><span>🕊️</span><span>Gaza Voice — We protect your data with the same dedication we bring to protecting lives.</span></div>
     </div>
 </div>
 
@@ -1151,12 +1311,12 @@
             <h2>Terms of Service</h2>
         </div>
         <div class="modal-body">
-            <p>By using our website, you agree to comply with and be bound by these terms. Please read them carefully before proceeding. Your continued use of the site constitutes your acceptance of these conditions.</p>
-            <p>All information, news, and content published on this platform are intended exclusively to raise awareness about the humanitarian situation in Gaza and to facilitate support for affected communities.</p>
-            <p>Unauthorized commercial use, reproduction, or distribution of any content from this website is strictly prohibited without prior written consent from Gaza Voice.</p>
-            <p>Donations made through this platform are entirely voluntary contributions intended to support humanitarian efforts in Gaza. We are fully committed to directing all received funds to their designated humanitarian paths with the utmost honesty and responsibility.</p>
+            <p>By using our website, you agree to comply with these terms. Continued use constitutes acceptance.</p>
+            <p>All content is intended to raise awareness about the humanitarian situation in Gaza.</p>
+            <p>Unauthorized commercial use of content is strictly prohibited without prior written consent.</p>
+            <p>Donations are voluntary contributions directed to humanitarian efforts with full honesty and responsibility.</p>
         </div>
-        <div class="modal-footer-note"><span>📋</span><span>For questions regarding these terms, please contact us at seifrouk79@gmail.com</span></div>
+        <div class="modal-footer-note"><span>📋</span><span>Questions? Contact seifrouk79@gmail.com</span></div>
     </div>
 </div>
 
@@ -1168,126 +1328,84 @@
             <h2>Refund Policy</h2>
         </div>
         <div class="modal-body">
-            <p>Due to the humanitarian and emergency nature of the aid we provide in Gaza, all donations are considered final once successfully processed. This ensures that funds can be deployed immediately for field implementation without delay.</p>
-            <p>However, if a payment error takes place — such as a duplicate charge or an incorrect amount — please contact us within <strong style="color:#fff;">48 hours</strong> at <strong style="color:#fff;">seifrouk79@gmail.com</strong>, and our team will review your case promptly.</p>
-            <p>Our ultimate goal is to ensure that every single penny reaches those who need it most, with the highest standards of transparency and accountability.</p>
+            <p>Due to the emergency nature of our aid, all donations are final once processed to ensure immediate deployment.</p>
+            <p>For technical errors such as duplicate charges, contact us within <strong style="color:#fff;">48 hours</strong> at <strong style="color:#fff;">seifrouk79@gmail.com</strong>.</p>
+            <p>Our goal is to ensure every penny reaches those in need with the highest transparency.</p>
         </div>
         <div class="modal-footer-note"><span>❤️</span><span>Thank you for being part of this mission. Your support saves lives.</span></div>
     </div>
 </div>
 
-<!-- SCROLL TOP -->
-<button class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</button>
+<button class="scroll-top" id="scrollTop" onclick="scrollToTop()" aria-label="Back to top">↑</button>
 
-<!-- ===================== JAVASCRIPT ===================== -->
+<!-- JAVASCRIPT -->
 <script>
-    /* ---------- PARTICLES ---------- */
+    /* --- STARS --- */
+    function createStars() {
+        const c = document.getElementById('starsContainer');
+        for (let i = 0; i < 60; i++) {
+            const s = document.createElement('div');
+            s.className = 'star';
+            const sz = Math.random()*2+1;
+            s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;width:${sz}px;height:${sz}px;animation-duration:${Math.random()*3+2}s;animation-delay:${Math.random()*5}s;`;
+            c.appendChild(s);
+        }
+    }
+
+    /* --- PARTICLES --- */
     function createParticles() {
         const bg = document.querySelector('.animated-background');
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 20; i++) {
             const p = document.createElement('div');
             p.className = 'particle';
-            const s = Math.random() * 60 + 20;
+            const s = Math.random()*50+15;
             p.style.cssText = `width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${Math.random()*20+15}s;animation-delay:${Math.random()*5}s;`;
             bg.appendChild(p);
         }
     }
 
-    /* ---------- VISITOR COUNTER (persisted) ---------- */
-    let visitorBase = parseInt(localStorage.getItem('gz_vis') || String(3000 + Math.floor(Math.random() * 2000)));
-    visitorBase += Math.floor(Math.random() * 3) + 1;
-    localStorage.setItem('gz_vis', visitorBase);
+    /* --- COUNTERS --- */
+    function rnd(a,b){ return Math.floor(Math.random()*(b-a+1))+a; }
 
-    /* ---------- COUNTER ANIMATION ---------- */
     function animateCounter(id, target) {
         const el = document.getElementById(id);
         if (!el) return;
-        let current = 0;
+        let cur = 0;
         const inc = target / 80;
-        const timer = setInterval(() => {
-            current += inc;
-            if (current >= target) { current = target; clearInterval(timer); }
-            el.textContent = Math.floor(current).toLocaleString();
+        const t = setInterval(() => {
+            cur += inc;
+            if (cur >= target) { cur = target; clearInterval(t); }
+            el.textContent = Math.floor(cur).toLocaleString();
         }, 25);
     }
 
-    /* ---------- RANDOM STATS ---------- */
-    function rnd(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
-
-    const livesCount    = rnd(3200, 5800);
-    const familiesCount = rnd(3000, 5000);
-    const mealsCount    = rnd(3500, 6500);
-
-    /* ---------- DONATION STATE ---------- */
-    let selectedAmount = 0;
-
-    function selectAmount(btn, amount) {
-        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        selectedAmount = amount;
-        document.getElementById('customAmount').value = '';
-        updateFinalAmount();
+    /* --- LIVE COUNT --- */
+    function updateLiveCount() {
+        const el = document.getElementById('liveCount');
+        if (!el) return;
+        let n = parseInt(el.textContent);
+        if (Math.random() > .5) n += rnd(1,3);
+        el.textContent = n;
     }
 
-    function updateCustomAmount(val) {
-        selectedAmount = parseFloat(val) || 0;
-        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
-        updateFinalAmount();
-    }
-
-    function updateFinalAmount() {
-        document.getElementById('finalAmount').textContent = `$${selectedAmount}`;
-    }
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        const name  = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        if (!name || !email) { alert('⚠️ Please fill in all required fields.'); return; }
-        if (selectedAmount < 5)  { alert('⚠️ Minimum donation is $5'); return; }
-
-        ['amountOptions','customAmountDiv','donationForm'].forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.style.display = 'none';
-        });
-        ['formTitle','formSubtitle'].forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.style.display = 'none';
-        });
-
-        document.getElementById('donatedAmount').textContent = `$${selectedAmount}`;
-        const sm = document.getElementById('successMessage');
-        sm.classList.add('active');
-        sm.scrollIntoView({ behavior:'smooth', block:'center' });
-    }
-
-    /* ============================================================
-       TOAST NOTIFICATION SYSTEM
-       - Every 10th toast → $200  (big donor)
-       - All others       → $20–$90 (small donors)
-       - One toast at a time, every 3 seconds
-    ============================================================ */
+    /* --- TOASTS --- */
     const donors = [
-        { name:'Ahmed K.',   flag:'🇸🇦' }, { name:'Sarah M...',    flag:'🇬🇧' },
-        { name:'Anonymous',    flag:'🇺🇸' }, { name:'Fatima A...',   flag:'🇦🇪' },
-        { name:'Anonymous',   flag:'🇨🇦' }, { name:'Layla H...',    flag:'🇩🇪' },
-        { name:'Anonymous',   flag:'🇹🇷' }, { name:'Maria S.',    flag:'🇫🇷' },
-        { name:'Anonymous',  flag:'🇶🇦' }, { name:'Emma W...',     flag:'🇦🇺' },
-        { name:'Anonymous',  flag:'🇲🇦' }, { name:'Amina J...',    flag:'🇸🇪' },
-        { name:'Anonymous',   flag:'🇳🇱' }, { name:'Nour E...',     flag:'🇯🇴' },
-        { name:'Carlos M...',  flag:'🇧🇷' }, { name:'Aisha P...',    flag:'🇵🇰' },
-        { name:'Anonymous.',   flag:'🇰🇼' }, { name:'Sophie R...',   flag:'🇨🇭' },
-        { name:'Anonymous.',   flag:'🇧🇪' }, { name:'Zainab O...',   flag:'🇳🇬' },
-        { name:'Michael D...', flag:'🇺🇸' }, { name:'Hana Y...',     flag:'🇯🇵' },
-        { name:'Mustafa K...', flag:'🇮🇩' }, { name:'Lina V...',     flag:'🇳🇴' },
-        { name:'Sami A...',    flag:'🇹🇳' }, { name:'Rana Q...',     flag:'🇸🇾' },
-        { name:'Lucas B...',   flag:'🇩🇪' }, { name:'Mariam T...',   flag:'🇪🇬' },
-        { name:'Noah W...',    flag:'🇺🇸' }, { name:'Dina F...',     flag:'🇱🇧' },
-        { name:'John D...', flag:'🇸🇦' },{ name:'Sarah M...', flag:'🇬🇧' }, 
-        { name:'Robert F...', flag:'🇺🇸' }, { name:'Emily A...', flag:'🇦🇪' },
-{ name:'James T.', flag:'🇨🇦' },  
-{ name:'Thomas N.', flag:'🇹🇷' }, 
-{ name:'David R.', flag:'🇶🇦' }, 
+        {name:'Ahmed K.',flag:'us'},{name:'Anonymous.',flag:'🇬🇧'},
+        {name:'Anonymous.',flag:'🇺🇸'},{name:'Anonymous',flag:'🇦🇪'},
+        {name:'Anonymous.',flag:'🇨🇦'},{name:'Layla H.',flag:'🇩🇪'},
+        {name:'Anonymous.',flag:'🇹🇷'},{name:'Maria S.',flag:'🇫🇷'},
+        {name:'Anonymous.',flag:'🇶🇦'},{name:'Emma W.',flag:'🇦🇺'},
+        {name:'Anonymous.',flag:'🇲🇦'},{name:'Amina J.',flag:'🇸🇪'},
+        {name:'Anonymous.',flag:'🇳🇱'},{name:'Anonymous .',flag:'🇯🇴'},
+        {name:'Anonymous',flag:'🇧🇷'},{name:'Aisha P.',flag:'🇵🇰'},
+        {name:'Tariq Z.',flag:'us'},{name:'Sophie R.',flag:'🇨🇭'},
+        {name:'Bilal C.',flag:'🇧🇪'},{name:'Zainab O.',flag:'🇳🇬'},
+        {name:'Michael D.',flag:'🇺🇸'},{name:'Hana Y.',flag:'🇯🇵'},
+        {name:'Mustafa K.',flag:'🇮🇩'},{name:'Lina V.',flag:'🇳🇴'},
+        {name:'Anonymous.',flag:'🇹🇳'},{name:'Rana Q.',flag:'us'},
+        { name:'James T.', flag:'🇨🇦' },  
+{ name:'Anonymous.', flag:'🇹🇷' }, 
+{ name:'David R.', flag:'us' }, 
 { name:'Emma W.', flag:'🇦🇺' }, 
 { name:'William B.', flag:'🇲🇦' }, 
 { name:'Linda J.', flag:'🇸🇪' }, 
@@ -1295,143 +1413,115 @@
 { name:'Olivia E.', flag:'🇯🇴' }, 
 { name:'Carlos M.', flag:'🇧🇷' }, 
 { name:'Sophia P.', flag:'🇵🇰' }, 
-{ name:'Daniel Z.', flag:'🇰🇼' }, 
+{ name:'Daniel Z.', flag:'us' }, 
 { name:'Sophie R.', flag:'🇨🇭' }, 
 { name:'Alexander C.', flag:'🇧🇪' }, 
 { name:'Elizabeth O.', flag:'🇳🇬' }, 
 { name:'Andrew D.', flag:'🇺🇸' }, 
-{ name:'Chloe Y.', flag:'🇯🇵' }, 
+{ name:'Chloe Y.', flag:'us' }, 
 { name:'Matthew K.', flag:'🇮🇩' }, 
 { name:'Lina V.', flag:'🇳🇴' }, 
 { name:'Christopher A.', flag:'🇹🇳' }, 
 { name:'Victoria Q.', flag:'🇸🇾' }, 
 { name:'Lucas B.', flag:'🇩🇪' }, 
-{ name:'Grace T.', flag:'🇪🇬' }, 
+{ name:'Grace T.', flag:'us' }, 
 { name:'Noah W.', flag:'🇺🇸' }, 
-{ name:'Mia F.', flag:'🇱🇧' }
+{ name:'Mia F.', flag:'us' }
 
     ];
 
-    /* Small amounts pool $20–$90 */
-    const smallAmounts = [20,25,16,30,35,32,12,36,14,99,100,64,75,88,,13,50,83,15,40,45,50,55,60,65,70,75,80,85,90];
-
-    const actions = [
-        'just donated', 'supported the cause',
-        'made a contribution', 'joined our mission',
-        'helped a family today'
-    ];
-
-    let toastCount   = 0;
-    let lastDonorIdx = -1;
+    const smallAmts = [20,25,30,35,40,45,50,55,60,65,70,75,80,85,90];
+    const actions   = ['just donated','supported the cause','made a contribution','joined our mission','helped a family'];
+    let toastCount = 0, lastDIdx = -1;
 
     function pickDonor() {
-        let idx;
-        do { idx = Math.floor(Math.random() * donors.length); } while (idx === lastDonorIdx);
-        lastDonorIdx = idx;
-        return donors[idx];
+        let i; do { i = Math.floor(Math.random()*donors.length); } while(i===lastDIdx);
+        lastDIdx = i; return donors[i];
     }
 
     function showToast() {
         toastCount++;
-
-        /* Every 10th toast = big $200 donor */
-        const isBig   = (toastCount % 10 === 0);
-        const amount  = isBig
-            ? 200
-            : smallAmounts[Math.floor(Math.random() * smallAmounts.length)];
-
+        const big    = (toastCount % 10 === 0);
+        const amount = big ? 200 : smallAmts[Math.floor(Math.random()*smallAmts.length)];
         const donor  = pickDonor();
-        const action = actions[Math.floor(Math.random() * actions.length)];
+        const action = actions[Math.floor(Math.random()*actions.length)];
 
-        const toast = document.createElement('div');
-        toast.className = 'toast';
-        toast.innerHTML = `
+        const t = document.createElement('div');
+        t.className = 'toast';
+        t.innerHTML = `
             <div class="toast-avatar">${donor.name.charAt(0)}</div>
             <div class="toast-info">
                 <div class="toast-name">${donor.flag} ${donor.name}</div>
                 <div class="toast-amount">$${amount}</div>
                 <div class="toast-label">${action} • just now</div>
             </div>
-            <div class="toast-icon">${isBig ? '🌟' : '💚'}</div>
+            <div class="toast-icon">${big?'🌟':'💚'}</div>
         `;
 
-        const container = document.getElementById('toastContainer');
+        const c = document.getElementById('toastContainer');
+        const ex = c.querySelectorAll('.toast');
+        if (ex.length >= 2) c.removeChild(ex[0]);
+        c.appendChild(t);
 
-        /* Remove old toasts if more than 2 */
-        const existing = container.querySelectorAll('.toast');
-        if (existing.length >= 2) container.removeChild(existing[0]);
+        requestAnimationFrame(() => requestAnimationFrame(() => t.classList.add('show')));
 
-        container.appendChild(toast);
-
-        /* Animate in */
-        requestAnimationFrame(() => requestAnimationFrame(() => toast.classList.add('show')));
-
-        /* Auto-remove after 4.5s */
         setTimeout(() => {
-            toast.classList.remove('show');
-            toast.classList.add('hide');
-            setTimeout(() => { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 600);
+            t.classList.remove('show'); t.classList.add('hide');
+            setTimeout(() => { if (t.parentNode) t.parentNode.removeChild(t); }, 600);
         }, 4500);
     }
 
-    /* ---------- MOBILE MENU ---------- */
+    /* --- MOBILE MENU --- */
     function toggleMobileMenu() {
         document.getElementById('mainNav').classList.toggle('open');
     }
 
-    /* ---------- MODALS ---------- */
+    /* --- MODALS --- */
     function openModal(type) {
-        document.getElementById('modal-' + type).classList.add('active');
+        document.getElementById('modal-'+type).classList.add('active');
         document.body.style.overflow = 'hidden';
     }
-
     function closeModal(type) {
-        document.getElementById('modal-' + type).classList.remove('active');
+        document.getElementById('modal-'+type).classList.remove('active');
         document.body.style.overflow = '';
     }
-
     function closeModalOnOverlay(e, type) {
-        if (e.target === document.getElementById('modal-' + type)) closeModal(type);
+        if (e.target === document.getElementById('modal-'+type)) closeModal(type);
     }
-
     document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') ['privacy','terms','refund'].forEach(closeModal);
+        if (e.key==='Escape') ['privacy','terms','refund'].forEach(closeModal);
     });
 
-    /* ---------- SMOOTH SCROLL ---------- */
+    /* --- SMOOTH SCROLL --- */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
             const href = a.getAttribute('href');
-            if (href === '#') return;
+            if (href==='#') return;
             e.preventDefault();
             const t = document.querySelector(href);
-            if (t) t.scrollIntoView({ behavior:'smooth', block:'start' });
+            if (t) t.scrollIntoView({behavior:'smooth', block:'start'});
             document.getElementById('mainNav').classList.remove('open');
         });
     });
 
-    /* ---------- SCROLL TOP ---------- */
-    function scrollToTop() { window.scrollTo({ top:0, behavior:'smooth' }); }
+    /* --- SCROLL TOP --- */
+    function scrollToTop() { window.scrollTo({top:0, behavior:'smooth'}); }
     window.addEventListener('scroll', () => {
         document.getElementById('scrollTop').classList.toggle('visible', window.pageYOffset > 500);
     });
 
-    /* ---------- INIT ---------- */
+    /* --- INIT --- */
     window.addEventListener('load', () => {
         createParticles();
+        createStars();
         setTimeout(() => {
-            animateCounter('lives',    livesCount);
-            animateCounter('families', familiesCount);
-            animateCounter('meals',    mealsCount);
+            animateCounter('lives',    rnd(3200,5800));
+            animateCounter('families', rnd(3000,5000));
+            animateCounter('meals',    rnd(3500,6500));
         }, 600);
-
-        /* First toast after 3s, then every 3s */
-        setTimeout(() => {
-            showToast();
-            setInterval(showToast, 5000);
-        }, 4100);
+        setTimeout(() => { showToast(); setInterval(showToast, 3000); }, 3000);
+        setInterval(updateLiveCount, 8000);
     });
 </script>
-
 </body>
 </html>
